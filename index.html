@@ -1,7 +1,3 @@
-Fais beaucoup plus simple et robuste :
-
-Remplace TOUT ton index.html par ça 👇
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,68 +6,30 @@ Remplace TOUT ton index.html par ça 👇
 
 <script>
 window.onload = function () {
-
-  const ua = navigator.userAgent || navigator.vendor || window.opera;
-
-  const isMobile =
-    /android/i.test(ua) ||
-    /iPad|iPhone|iPod/.test(ua);
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   if (isMobile) {
-
-    window.location.href =
-      "co.ponybikes.venus://redeem_coupon?coupon=ENCOREUN";
-
-    setTimeout(function () {
-      document.getElementById("fallback").style.display = "block";
-    }, 1500);
-
+    window.location.href = "co.ponybikes.venus://redeem_coupon?coupon=ENCOREUN";
   } else {
-
-    window.location.replace(
-      "https://apps.apple.com/fr/app/pony-v%C3%A9los-et-trottinettes/id1273866794"
-    );
-
+    window.location.href = "https://apps.apple.com/fr/app/pony-v%C3%A9los-et-trottinettes/id1273866794";
   }
 };
 </script>
-
-<style>
-body{
-  font-family:Arial,sans-serif;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  margin:0;
-  background:#f7f7f7;
-}
-
-a{
-  background:#ff5c7a;
-  color:white;
-  padding:18px 28px;
-  border-radius:14px;
-  text-decoration:none;
-  font-size:22px;
-  font-weight:bold;
-}
-
-#fallback{
-  display:none;
-}
-</style>
-
 </head>
 
 <body>
+  <p>Redirection en cours...</p>
 
-<a
-  id="fallback"
-  href="co.ponybikes.venus://redeem_coupon?coupon=ENCOREUN"
->
-Ouvrir pony
-</a>
+  <p>
+    <a href="https://apps.apple.com/fr/app/pony-v%C3%A9los-et-trottinettes/id1273866794">
+      Ouvrir la page App Store
+    </a>
+  </p>
 
+  <p>
+    <a href="co.ponybikes.venus://redeem_coupon?coupon=ENCOREUN">
+      Ouvrir pony
+    </a>
+  </p>
 </body>
 </html>
