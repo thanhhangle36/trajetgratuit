@@ -1,40 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>pony</title>
-
 <script>
-window.onload = function() {
-  window.location.href =
-    "co.ponybikes.venus://redeem_coupon?coupon=ENCOREUN";
+window.onload = function () {
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile) {
+
+    window.location.href =
+      "co.ponybikes.venus://redeem_coupon?coupon=ENCOREUN";
+
+    setTimeout(function () {
+      document.getElementById("fallback").style.display = "block";
+    }, 1200);
+
+  } else {
+
+    window.location.href =
+      "https://apps.apple.com/fr/app/pony-v%C3%A9los-et-trottinettes/id1273866794";
+
+  }
 };
 </script>
-
-<style>
-body{
-  font-family:sans-serif;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
-a{
-  padding:16px 24px;
-  background:#f46d80;
-  color:white;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:bold;
-}
-</style>
-</head>
-
-<body>
-
-<a href="co.ponybikes.venus://redeem_coupon?coupon=ENCOREUN">
-Ouvrir pony
-</a>
-
-</body>
-</html>
